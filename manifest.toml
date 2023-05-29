@@ -1,0 +1,32 @@
+# Basic information about your app
+name = "simplytranslate for Yunohost"
+version = "1.0.0"
+description = "A web-based translation tool that was packaged to use in Yunohost"
+maintainer = "Saebaryo <me@@yorili.com>"
+
+# Dependencies
+dependencies = [
+    "nginx",
+    "php7.3-fpm",
+    "php7.3-mbstring",
+    "php7.3-xml",
+    "php7.3-zip",
+    "postgresql",
+]
+
+# Installation and removal scripts
+[[postinst]]
+  name = "install"
+  path = "scripts/install"
+  perms = "755"
+
+[[prerm]]
+  name = "remove"
+  path = "scripts/remove"
+  perms = "755"
+
+[[install]]
+  name = "domain"
+  type = "string"
+  label = "Domain name"
+  default = "example.com"
